@@ -3223,7 +3223,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     if (this.plugin.dataReadOnlyReason) {
-      containerEl.createEl("h2", { text: "Recall Garden｜忆园（只读保护）" });
+      new Setting(containerEl).setName("Recall Garden｜忆园（只读保护）").setHeading();
       containerEl.createEl("p", {
         text: this.plugin.dataReadOnlyReason,
         cls: "recall-garden-readonly-warning"
@@ -3235,7 +3235,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
       return;
     }
 
-    containerEl.createEl("h3", { text: "外观与皮肤" });
+    new Setting(containerEl).setName("外观与皮肤").setHeading();
     const skinPreview = containerEl.createDiv({ cls: "recall-garden-view recall-garden-skin-preview" });
     applyUiSkin(
       skinPreview,
@@ -3253,8 +3253,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
     previewCard.createSpan({ text: "真题卡 · 优先级 S", cls: "recall-garden-badge is-exam" });
     previewCard.createEl("strong", { text: "Photosynthesis" });
     const previewTrack = previewCard.createDiv({ cls: "recall-garden-progress-track" });
-    const previewFill = previewTrack.createDiv({ cls: "recall-garden-progress-fill" });
-    previewFill.style.width = "68%";
+    previewTrack.createDiv({ cls: "recall-garden-progress-fill recall-garden-progress-fill-preview" });
     const updateSkinPreview = (skin: UiSkin): void => {
       const meta = UI_SKINS[skin];
       previewTitle.setText(meta.label);
@@ -3291,7 +3290,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         })
       );
 
-    containerEl.createEl("h3", { text: "考试倒计时" });
+    new Setting(containerEl).setName("考试倒计时").setHeading();
 
     new Setting(containerEl)
       .setName("考试名称")
@@ -3336,7 +3335,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "制卡与资料库" });
+    new Setting(containerEl).setName("制卡与资料库").setHeading();
 
     new Setting(containerEl)
       .setName("新建八段式复习卡")
@@ -3377,7 +3376,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         })
       );
 
-    containerEl.createEl("h3", { text: "扫描与队列" });
+    new Setting(containerEl).setName("扫描与队列").setHeading();
 
     new Setting(containerEl)
       .setName("扫描文件夹")
@@ -3449,7 +3448,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         })
       );
 
-    containerEl.createEl("h3", { text: "FSRS 自适应调度" });
+    new Setting(containerEl).setName("FSRS 自适应调度").setHeading();
     new Setting(containerEl)
       .setName("调度算法")
       .setDesc("当前使用 FSRS-6。旧阶段卡会在下一次评分时按原复习次数、错误次数和既有间隔生成初始记忆状态，不会清零重学。");
@@ -3482,7 +3481,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "数据安全" });
+    new Setting(containerEl).setName("数据安全").setHeading();
 
     const shadowStatus = this.plugin.getShadowStoreStatus();
     new Setting(containerEl)
@@ -3520,7 +3519,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
         button.setButtonText("选择快照").setWarning().onClick(() => this.plugin.openSnapshotPicker())
       );
 
-    containerEl.createEl("h3", { text: "AI 学习、出题与核验" });
+    new Setting(containerEl).setName("AI 学习、出题与核验").setHeading();
     containerEl.createEl("p", {
       text: "AI学习补全会在一次生成中提供30秒版、缺失八段、挖空、干扰项单选与辨析题，完整预览并确认后才写回；笔记核验也只在你主动点击时发送当前笔记。两者都会剔除忆园托管区块，避免旧练习干扰生成。最新核验报告保存到 Vault/Recall Garden/.data/verifications，不写入 data.json。网络使用、账户要求和数据范围详见公开仓库的隐私说明。",
       cls: "setting-item-description"

@@ -2455,6 +2455,10 @@
   width: 100%;
 }
 
+.recall-garden-progress-fill-preview {
+  width: 68%;
+}
+
 .recall-garden-view.recall-garden-skin-calm-blue,
 .recall-garden-diagnostics.recall-garden-skin-calm-blue {
   --garden-blue: #527ab6;
