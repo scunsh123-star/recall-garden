@@ -3223,7 +3223,7 @@ class RecallGardenSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     if (this.plugin.dataReadOnlyReason) {
-      new Setting(containerEl).setName("Recall Garden｜忆园（只读保护）").setHeading();
+      new Setting(containerEl).setName("数据只读保护").setHeading();
       containerEl.createEl("p", {
         text: this.plugin.dataReadOnlyReason,
         cls: "recall-garden-readonly-warning"
