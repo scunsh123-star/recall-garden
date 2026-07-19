@@ -1,0 +1,33 @@
+{
+  "name": "recall-garden",
+  "version": "1.0.0",
+  "description": "Active recall, spaced repetition, AI study packs, and note verification for Markdown notes",
+  "main": "main.js",
+  "scripts": {
+    "build": "node esbuild.config.mjs production",
+    "dev": "node esbuild.config.mjs",
+    "check": "tsc --noEmit --skipLibCheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify:production-data": "vitest run tests/production-data.acceptance.test.ts",
+    "deploy:test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/deploy.ps1 -Target test",
+    "deploy:production": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/deploy.ps1 -Target production"
+  },
+  "keywords": [
+    "obsidian",
+    "spaced-repetition",
+    "active-recall"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "builtin-modules": "^5.0.0",
+    "esbuild": "^0.28.1",
+    "obsidian": "^1.13.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "ts-fsrs": "^5.4.1"
+  }
+}

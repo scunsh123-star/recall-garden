@@ -1,0 +1,9 @@
+{
+  "id": "recall-garden",
+  "name": "Recall Garden",
+  "version": "1.0.0",
+  "minAppVersion": "1.11.4",
+  "description": "Active recall, spaced repetition, AI study packs, and note verification for Markdown notes.",
+  "author": "Recall Garden",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,9 @@
+node_modules/
+main.js
+coverage/
+output/
+.deploy-backups/
+.playwright-cli/
+test-vault/
+*.log
+*.tsbuildinfo
